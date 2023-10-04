@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Task Form</title>
+        <style>
+          body {
+                background-image: url(images-task2/Hero_BackgroundGraphic.webp),
+                linear-gradient(180deg, #C9F2FF 0%, #E6FCFF 96.63%);
+                margin: 0;
+                padding: 0;
+                display: flex;
+                }
+            
+            .container {
+            margin: 0 auto; 
+            margin-top: 10%;
+            width: 50%;
+            height: 95%;
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            justify-content: center; 
+            align-items: center;
+        }
+           
+        </style>
+    </head>
+    <body>
+         <!-- Navigation started rgb(8, 50, 66) -->
+       
+         <header style="background-color: #2B88E5;">
+            <a href="#"><img src="intern-images/logo.jpg" class="logo" alt=""></a>
+            <ul id="menu">
+                <li> <a href="homepage.html">Home</a></li>
+                <li><a href="add_task.html">Assign a Task</a></li>
+                <li><a href="./communication.html">Communicate</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li><a href="./signup.html">Signup</a></li>
+            </ul>  
+        </header>
+        <!-- Navigation finish -->
+
+
+<br><br><br><br><br><br>
+        <div class="container">
+            <h2>ADD TASK</h2>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <label for="taskName">Task Name:</label>
+                <input type="text" id="taskName" name="taskName" required>
+                <br>
+    
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+                <br>
+    
+                <label for="employeeName">Employee Name:</label>
+                <input type="text" id="employeeName" name="employeeName" required>
+                <br>
+    
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+                <br><br>
+    
+                <label for="aboutTask">About Task:</label>
+                <textarea id="aboutTask" name="aboutTask" rows="4" required></textarea>
+    
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+    </html>
+     

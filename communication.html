@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Customer Chat</title>
+
+<style>
+     body {
+  background-image: url(images-task2/Hero_BackgroundGraphic.webp),
+  linear-gradient(180deg, #C9F2FF 0%, #E6FCFF 96.63%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* justify-content: center;
+  align-items: center;
+  height: 100vh; */
+}
+</style>
+
+</head>
+<body>
+    <!-- Navigation started rgb(8, 50, 66) -->
+       
+    <header style="background-color: #2B88E5;">
+        <a href="#"><img src="intern-images/logo.jpg" class="logo" alt=""></a>
+        <ul id="menu">
+            <li> <a href="homepage.html">Home</a></li>
+            <li><a href="add_task.html">Assign a Task</a></li>
+            <li><a href="./communication.html">Communicate</a></li>
+            <li><a href="./login.html">Login</a></li>
+            <li><a href="./signup.html">Signup</a></li>
+        </ul>  
+    </header>
+    <!-- Navigation finish -->
+    
+    <div id="chat-container">
+        <h2>Customer Chat</h2>
+        <div id="messages"></div>
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button id="send-button">Send</button>
+    </div>
+
+    <script>
+        const messagesContainer = document.getElementById('messages');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+
+        // Simulated chat messages
+        const chatMessages = [
+            { user: 'User1', text: 'Hello Prajakta Here !' },
+            { user: 'User2', text: 'Hi! Prajakta' },
+            
+        ];
+
+        // Function to add a new message to the chat
+        function addMessage(user, text) {
+            const messageElement = document.createElement('div');
+            messageElement.innerHTML = `<strong>${user}:</strong> ${text}`;
+            messagesContainer.appendChild(messageElement);
+        }
+
+        // Display initial chat messages
+        chatMessages.forEach(message => {
+            addMessage(message.user, message.text);
+        });
+
+        // Event handler for sending a new message
+        sendButton.addEventListener('click', () => {
+            const user = 'User1'; // Replace with the authenticated user
+            const text = messageInput.value;
+
+            if (text.trim() !== '') {
+                addMessage(user, text);
+                messageInput.value = '';
+            }
+        });
+
+        // Simulate receiving a message (for demonstration purposes)
+        setTimeout(() => {
+            const user = 'User2';
+            const text = 'How can I help you?';
+
+            addMessage(user, text);
+        }, 3000);
+    </script>
+</body>
+</html>
